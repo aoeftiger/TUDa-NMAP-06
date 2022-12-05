@@ -188,7 +188,8 @@ def plot_hamiltonian(machine, zleft=-50, zright=50, dpmax=0.01, cbar=True):
         colorbar.ax.axhline(0, lw=2, c='b')
     plt.contour(Z, DP, H, colors='b', linewidths=2, levels=[0])
     
-def plot_rf_overview():
+def plot_rf_overview(machine):
+    m = machine
     z_range = np.linspace(-150, 40, num=1000)
     # z location of unstable fixed point:
     z_ufp = -m.circumference * (np.pi - 2 * m.phi_s) / (2 * np.pi * m.harmonic)
